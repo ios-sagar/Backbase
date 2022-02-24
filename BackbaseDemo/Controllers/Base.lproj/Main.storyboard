@@ -46,7 +46,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="pGu-W1-Qgf" firstAttribute="top" secondItem="vqh-Y3-wnj" secondAttribute="top" constant="41" id="3lH-kf-xYM"/>
                                     <constraint firstAttribute="trailing" secondItem="pGu-W1-Qgf" secondAttribute="trailing" id="6Nc-MQ-FMa"/>
@@ -85,13 +85,63 @@
             </objects>
             <point key="canvasLocation" x="589.85507246376812" y="693.75"/>
         </scene>
+        <!--City Map View Controller-->
+        <scene sceneID="VmC-4d-aLD">
+            <objects>
+                <viewController storyboardIdentifier="CityMapViewController" id="kaz-TO-CkD" customClass="CityMapViewController" customModule="BackbaseDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="waR-a8-8xo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fxc-nS-AnP">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="104"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City Map" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdM-ZQ-ffL">
+                                        <rect key="frame" x="0.0" y="41" width="414" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" red="0.18431372549019609" green="0.18431372549019609" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="104" id="pFa-sO-Zcq"/>
+                                    <constraint firstAttribute="width" constant="414" id="v7T-Pa-G5R"/>
+                                </constraints>
+                            </view>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="iVM-Cq-q7a">
+                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="8tu-1N-sPn"/>
+                                    <constraint firstAttribute="height" constant="758" id="RoC-A2-Saa"/>
+                                </constraints>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dIr-Lh-Hrd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iVM-Cq-q7a" firstAttribute="leading" secondItem="dIr-Lh-Hrd" secondAttribute="leading" id="CTj-9I-BUM"/>
+                            <constraint firstItem="Fxc-nS-AnP" firstAttribute="leading" secondItem="dIr-Lh-Hrd" secondAttribute="leading" id="Fih-Ii-PEs"/>
+                            <constraint firstItem="iVM-Cq-q7a" firstAttribute="trailing" secondItem="dIr-Lh-Hrd" secondAttribute="trailing" id="IVO-2v-sAw"/>
+                            <constraint firstItem="Fxc-nS-AnP" firstAttribute="trailing" secondItem="dIr-Lh-Hrd" secondAttribute="trailing" id="MMl-1b-O2t"/>
+                            <constraint firstItem="iVM-Cq-q7a" firstAttribute="top" secondItem="Fxc-nS-AnP" secondAttribute="bottom" id="RV7-AF-TAe"/>
+                            <constraint firstItem="Fxc-nS-AnP" firstAttribute="top" secondItem="waR-a8-8xo" secondAttribute="top" id="n8J-x8-ZU7"/>
+                            <constraint firstItem="iVM-Cq-q7a" firstAttribute="bottom" secondItem="dIr-Lh-Hrd" secondAttribute="bottom" id="qZa-iZ-FAy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mkMapViewObj" destination="iVM-Cq-q7a" id="hcL-zs-QLv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BL1-M4-9py" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1314.4927536231885" y="693.75"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

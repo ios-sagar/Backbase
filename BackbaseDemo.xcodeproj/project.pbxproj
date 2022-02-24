@@ -22,6 +22,15 @@
 		FFF1710A27C6784300B0A427 /* CityDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFF1710627C6784300B0A427 /* CityDetailsTableViewCell.xib */; };
 		FFF1710B27C6784300B0A427 /* CityDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFF1710627C6784300B0A427 /* CityDetailsTableViewCell.xib */; };
 		FFF1710C27C6784300B0A427 /* CityDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFF1710627C6784300B0A427 /* CityDetailsTableViewCell.xib */; };
+		FFF1710E27C6872400B0A427 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF1710D27C6872400B0A427 /* Router.swift */; };
+		FFF1710F27C6872400B0A427 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF1710D27C6872400B0A427 /* Router.swift */; };
+		FFF1711027C6872400B0A427 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF1710D27C6872400B0A427 /* Router.swift */; };
+		FFF1711227C6876100B0A427 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF1711127C6876100B0A427 /* Constants.swift */; };
+		FFF1711327C6876100B0A427 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF1711127C6876100B0A427 /* Constants.swift */; };
+		FFF1711427C6876100B0A427 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF1711127C6876100B0A427 /* Constants.swift */; };
+		FFF1711627C6885C00B0A427 /* CityMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF1711527C6885C00B0A427 /* CityMapViewController.swift */; };
+		FFF1711727C6885C00B0A427 /* CityMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF1711527C6885C00B0A427 /* CityMapViewController.swift */; };
+		FFF1711827C6885C00B0A427 /* CityMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF1711527C6885C00B0A427 /* CityMapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +66,9 @@
 		FF86F29027C542D100C8CB34 /* BackbaseDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackbaseDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FFF1710527C6784300B0A427 /* CityDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		FFF1710627C6784300B0A427 /* CityDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityDetailsTableViewCell.xib; sourceTree = "<group>"; };
+		FFF1710D27C6872400B0A427 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		FFF1711127C6876100B0A427 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FFF1711527C6885C00B0A427 /* CityMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityMapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +152,8 @@
 		FF86F29D27C542FE00C8CB34 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FFF1710D27C6872400B0A427 /* Router.swift */,
+				FFF1711127C6876100B0A427 /* Constants.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -149,6 +163,7 @@
 			children = (
 				FFF1710427C6782300B0A427 /* CustomCell */,
 				FF86F27127C542CF00C8CB34 /* DashboardViewController.swift */,
+				FFF1711527C6885C00B0A427 /* CityMapViewController.swift */,
 				FF86F27327C542CF00C8CB34 /* Main.storyboard */,
 			);
 			path = Controllers;
@@ -313,8 +328,11 @@
 			files = (
 				FF86F27227C542CF00C8CB34 /* DashboardViewController.swift in Sources */,
 				FF86F26E27C542CF00C8CB34 /* AppDelegate.swift in Sources */,
+				FFF1710E27C6872400B0A427 /* Router.swift in Sources */,
+				FFF1711627C6885C00B0A427 /* CityMapViewController.swift in Sources */,
 				FF86F27027C542CF00C8CB34 /* SceneDelegate.swift in Sources */,
 				FFF1710727C6784300B0A427 /* CityDetailsTableViewCell.swift in Sources */,
+				FFF1711227C6876100B0A427 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,7 +341,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF86F28527C542D100C8CB34 /* BackbaseDemoTests.swift in Sources */,
+				FFF1710F27C6872400B0A427 /* Router.swift in Sources */,
 				FFF1710827C6784300B0A427 /* CityDetailsTableViewCell.swift in Sources */,
+				FFF1711727C6885C00B0A427 /* CityMapViewController.swift in Sources */,
+				FFF1711327C6876100B0A427 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +352,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFF1711827C6885C00B0A427 /* CityMapViewController.swift in Sources */,
+				FFF1711427C6876100B0A427 /* Constants.swift in Sources */,
+				FFF1711027C6872400B0A427 /* Router.swift in Sources */,
 				FFF1710927C6784300B0A427 /* CityDetailsTableViewCell.swift in Sources */,
 				FF86F28F27C542D100C8CB34 /* BackbaseDemoUITests.swift in Sources */,
 				FF86F29127C542D100C8CB34 /* BackbaseDemoUITestsLaunchTests.swift in Sources */,
@@ -498,6 +522,11 @@
 				DEVELOPMENT_TEAM = 42W52RH4KD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BackbaseDemo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = 1.0;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Allow to showcity location";
+				INFOPLIST_KEY_NSLocationUsageDescription = "To show city location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = Testing;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -527,6 +556,11 @@
 				DEVELOPMENT_TEAM = 42W52RH4KD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BackbaseDemo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = 1.0;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Allow to showcity location";
+				INFOPLIST_KEY_NSLocationUsageDescription = "To show city location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = Testing;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
