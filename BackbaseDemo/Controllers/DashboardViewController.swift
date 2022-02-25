@@ -12,18 +12,31 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var tbl_cityDetails: UITableView!
     private let dashboardViewModel = DashboardViewModel()
     var cityData = [Cities]()
-    
+    var offSet = 100
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         registerTableViewCell()
         dashboardViewModel.dashboardDelegate = self
-        dashboardViewModel.loadCities()
+        loadCityData(offSet: offSet)
     }
     
     func registerTableViewCell() {
         tbl_cityDetails.register(CityDetailsTableViewCell.nib(), forCellReuseIdentifier: Constants.cityCellIdentifier)
         tbl_cityDetails.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    func loadCityData(offSet : Int){
+        dashboardViewModel.loadCities(offSet: offSet)
+        self.tbl_cityDetails.reloadData()
+    }
+    
+    func showSpinner(){
+        let spinner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
+        spinner.startAnimating()
+        spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: tbl_cityDetails.bounds.width, height: CGFloat(44))
+        self.tbl_cityDetails.tableFooterView = spinner
+        self.tbl_cityDetails.tableFooterView?.isHidden = false
     }
     
 }
@@ -49,6 +62,14 @@ extension DashboardViewController : UITableViewDelegate, UITableViewDataSource{
             self.navigationController?.pushViewController(cityViewController, animated: true)
         }
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if !cityData.isEmpty, indexPath.row + 1 == cityData.count {
+            self.offSet += 100
+            loadCityData(offSet: offSet)
+        }
+    }
+    
 }
 
 extension DashboardViewController : DashboardViewDelegate{
