@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF753E5F27C817EB00241279 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = FF753E5E27C817EB00241279 /* cities.json */; };
+		FF753E6527C818D200241279 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF753E6427C818D200241279 /* NetworkManager.swift */; };
+		FF753E6627C818D200241279 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF753E6427C818D200241279 /* NetworkManager.swift */; };
+		FF753E6727C818D200241279 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF753E6427C818D200241279 /* NetworkManager.swift */; };
+		FF753E6927C81B4A00241279 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF753E6827C81B4A00241279 /* DashboardViewModel.swift */; };
+		FF753E6A27C81B4A00241279 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF753E6827C81B4A00241279 /* DashboardViewModel.swift */; };
+		FF753E6B27C81B4A00241279 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF753E6827C81B4A00241279 /* DashboardViewModel.swift */; };
 		FF86F26E27C542CF00C8CB34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86F26D27C542CF00C8CB34 /* AppDelegate.swift */; };
 		FF86F27027C542CF00C8CB34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86F26F27C542CF00C8CB34 /* SceneDelegate.swift */; };
 		FF86F27227C542CF00C8CB34 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86F27127C542CF00C8CB34 /* DashboardViewController.swift */; };
@@ -51,6 +58,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FF753E5E27C817EB00241279 /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
+		FF753E6427C818D200241279 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		FF753E6827C81B4A00241279 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		FF86F26A27C542CF00C8CB34 /* BackbaseDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackbaseDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF86F26D27C542CF00C8CB34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF86F26F27C542CF00C8CB34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +106,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF753E5D27C817D700241279 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FF753E5E27C817EB00241279 /* cities.json */,
+				FF753E6427C818D200241279 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		FF86F26127C542CF00C8CB34 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +138,7 @@
 		FF86F26C27C542CF00C8CB34 /* BackbaseDemo */ = {
 			isa = PBXGroup;
 			children = (
+				FF753E5D27C817D700241279 /* Network */,
 				FF86F29D27C542FE00C8CB34 /* Services */,
 				FF86F29E27C5430400C8CB34 /* Controllers */,
 				FF86F29F27C5430A00C8CB34 /* ViewModels */,
@@ -172,6 +192,7 @@
 		FF86F29F27C5430A00C8CB34 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				FF753E6827C81B4A00241279 /* DashboardViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -297,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF86F27A27C542D000C8CB34 /* LaunchScreen.storyboard in Resources */,
+				FF753E5F27C817EB00241279 /* cities.json in Resources */,
 				FF86F27727C542D000C8CB34 /* Assets.xcassets in Resources */,
 				FF86F27527C542CF00C8CB34 /* Main.storyboard in Resources */,
 				FFF1710A27C6784300B0A427 /* CityDetailsTableViewCell.xib in Resources */,
@@ -329,7 +351,9 @@
 				FF86F27227C542CF00C8CB34 /* DashboardViewController.swift in Sources */,
 				FF86F26E27C542CF00C8CB34 /* AppDelegate.swift in Sources */,
 				FFF1710E27C6872400B0A427 /* Router.swift in Sources */,
+				FF753E6927C81B4A00241279 /* DashboardViewModel.swift in Sources */,
 				FFF1711627C6885C00B0A427 /* CityMapViewController.swift in Sources */,
+				FF753E6527C818D200241279 /* NetworkManager.swift in Sources */,
 				FF86F27027C542CF00C8CB34 /* SceneDelegate.swift in Sources */,
 				FFF1710727C6784300B0A427 /* CityDetailsTableViewCell.swift in Sources */,
 				FFF1711227C6876100B0A427 /* Constants.swift in Sources */,
@@ -340,11 +364,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF753E6627C818D200241279 /* NetworkManager.swift in Sources */,
 				FF86F28527C542D100C8CB34 /* BackbaseDemoTests.swift in Sources */,
 				FFF1710F27C6872400B0A427 /* Router.swift in Sources */,
 				FFF1710827C6784300B0A427 /* CityDetailsTableViewCell.swift in Sources */,
 				FFF1711727C6885C00B0A427 /* CityMapViewController.swift in Sources */,
 				FFF1711327C6876100B0A427 /* Constants.swift in Sources */,
+				FF753E6A27C81B4A00241279 /* DashboardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,9 +381,11 @@
 				FFF1711827C6885C00B0A427 /* CityMapViewController.swift in Sources */,
 				FFF1711427C6876100B0A427 /* Constants.swift in Sources */,
 				FFF1711027C6872400B0A427 /* Router.swift in Sources */,
+				FF753E6727C818D200241279 /* NetworkManager.swift in Sources */,
 				FFF1710927C6784300B0A427 /* CityDetailsTableViewCell.swift in Sources */,
 				FF86F28F27C542D100C8CB34 /* BackbaseDemoUITests.swift in Sources */,
 				FF86F29127C542D100C8CB34 /* BackbaseDemoUITestsLaunchTests.swift in Sources */,
+				FF753E6B27C81B4A00241279 /* DashboardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

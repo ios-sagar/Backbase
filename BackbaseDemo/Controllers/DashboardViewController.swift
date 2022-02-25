@@ -10,10 +10,15 @@ import UIKit
 class DashboardViewController: UIViewController {
     
     @IBOutlet weak var tbl_cityDetails: UITableView!
+    private let dashboardViewModel = DashboardViewModel()
+    var cityData = [Cities]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         registerTableViewCell()
+        dashboardViewModel.dashboardDelegate = self
+        dashboardViewModel.loadCities()
     }
     
     func registerTableViewCell() {
@@ -25,13 +30,14 @@ class DashboardViewController: UIViewController {
 
 extension DashboardViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        return cityData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cityCellIdentifier) as! CityDetailsTableViewCell
         cell.separatorInset = UIEdgeInsets.zero
         cell.selectionStyle = .none
+        cell.configureCell(city: cityData, indexPath: indexPath.row)
         return cell
     }
     
@@ -39,5 +45,11 @@ extension DashboardViewController : UITableViewDelegate, UITableViewDataSource{
         if let cityViewController = Router.getControllerWith(identifier: Views.cityMap.rawValue) as? CityMapViewController {
             self.navigationController?.pushViewController(cityViewController, animated: true)
         }
+    }
+}
+
+extension DashboardViewController : DashboardViewDelegate{
+    func getCityValues(cityValues: [Cities]) {
+        cityData = cityValues
     }
 }

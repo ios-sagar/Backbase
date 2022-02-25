@@ -74,6 +74,10 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="lbl_cityTitle" destination="b0T-0S-hWA" id="qO3-ns-hYa"/>
+                <outlet property="lbl_coordinates" destination="E8r-pF-IVS" id="b3s-Ca-a09"/>
+            </connections>
             <point key="canvasLocation" x="-6.5217391304347831" y="33.482142857142854"/>
         </tableViewCell>
     </objects>

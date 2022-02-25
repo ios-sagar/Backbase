@@ -10,6 +10,7 @@ import Foundation
 struct Constants {
     static let storyboard = "Main"
     static let cityCellIdentifier = "cityCellIdentifier"
+    static let cityDetailsTableViewCell = "CityDetailsTableViewCell"
 }
 
 enum Views: String {

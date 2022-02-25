@@ -11,7 +11,7 @@ import UIKit
 class Router: NSObject {
 
   static func getControllerWith(identifier: String) -> UIViewController {
-      let storyBoard = UIStoryboard.init(name: Constants.storyboard, bundle: nil)
+    let storyBoard = UIStoryboard.init(name: Constants.storyboard, bundle: nil)
     let controller = storyBoard.instantiateViewController(withIdentifier: identifier)
     return controller
   }
