@@ -14,10 +14,14 @@ class CityMapViewController: UIViewController {
     
     @IBOutlet weak var mkMapViewObj: MKMapView!
     var locationManager:CLLocationManager!
-
+    var longitude = 0.0, latitude : Double = 0.0
+    var viewtitle : String?
+    @IBOutlet weak var lbl_title: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        lbl_title.text = viewtitle
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -45,7 +49,7 @@ extension CityMapViewController : CLLocationManagerDelegate,MKMapViewDelegate{
     }
     
     func render(_ location:CLLocation){
-        let coordinates = CLLocationCoordinate2D(latitude: 52.374031, longitude: 4.88969)
+        let coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let span = MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
         let region = MKCoordinateRegion(center: coordinates, span: span)
         mkMapViewObj.setRegion(region, animated: true)

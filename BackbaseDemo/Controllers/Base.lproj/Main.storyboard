@@ -131,6 +131,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="lbl_title" destination="bdM-ZQ-ffL" id="UUO-iO-xNW"/>
                         <outlet property="mkMapViewObj" destination="iVM-Cq-q7a" id="hcL-zs-QLv"/>
                     </connections>
                 </viewController>

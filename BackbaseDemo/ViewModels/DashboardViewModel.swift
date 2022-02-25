@@ -45,6 +45,7 @@ class DashboardViewModel{
     func bindData(parameter: Any?) {
         if let data = parameter as? [Cities] {
             self.cities = data
+            self.cities = self.cities.sorted(by: { $0.name < $1.name })
             dashboardDelegate?.getCityValues(cityValues: self.cities)
         }else{
             print("error")

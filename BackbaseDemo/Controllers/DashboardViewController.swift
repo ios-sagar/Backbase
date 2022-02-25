@@ -43,6 +43,9 @@ extension DashboardViewController : UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cityViewController = Router.getControllerWith(identifier: Views.cityMap.rawValue) as? CityMapViewController {
+            cityViewController.longitude = self.cityData[indexPath.row].coord.lon
+            cityViewController.latitude = self.cityData[indexPath.row].coord.lat
+            cityViewController.viewtitle = self.cityData[indexPath.row].name
             self.navigationController?.pushViewController(cityViewController, animated: true)
         }
     }
