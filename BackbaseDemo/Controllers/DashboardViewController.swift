@@ -31,7 +31,7 @@ class DashboardViewController: UIViewController {
     
     func loadCityData(offSet : Int){
         dashboardViewModel.loadCities(offSet: offSet)
-        //self.filterData = self.cityData
+        self.filterData = self.cityData
         DispatchQueue.main.async {
             self.tbl_cityDetails.reloadData()
         }
@@ -49,18 +49,15 @@ class DashboardViewController: UIViewController {
 
 extension DashboardViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(city_searchBar.text == ""){
-            return cityData.count
-        }else{
-            return filterData.count
-        }
+        return filterData.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cityCellIdentifier) as! CityDetailsTableViewCell
         cell.separatorInset = UIEdgeInsets.zero
         cell.selectionStyle = .none
-        cell.configureCell(city: self.cityData, indexPath: indexPath.row)
+        cell.configureCell(city: self.filterData, indexPath: indexPath.row)
         return cell
     }
     
@@ -91,12 +88,11 @@ extension DashboardViewController : DashboardViewDelegate{
 
 extension DashboardViewController : UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        guard !searchText.isEmpty  else { filterData = cityData; return }
-
-            filterData = cityData.filter({ user -> Bool in
-                return user.name.lowercased().contains(searchText.lowercased())
-            })
+        if searchText.isEmpty {
+            filterData = cityData
+        } else {
+            filterData = cityData.filter{$0.name.range(of: searchText, options: .caseInsensitive) != nil }
+        }
         self.tbl_cityDetails.reloadData()
-
     }
 }
