@@ -63,15 +63,15 @@ extension DashboardViewController : UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cityViewController = Router.getControllerWith(identifier: Views.cityMap.rawValue) as? CityMapViewController {
-            cityViewController.longitude = self.cityData[indexPath.row].coord.lon
-            cityViewController.latitude = self.cityData[indexPath.row].coord.lat
-            cityViewController.viewtitle = self.cityData[indexPath.row].name
+            cityViewController.longitude = self.filterData[indexPath.row].coord.lon
+            cityViewController.latitude = self.filterData[indexPath.row].coord.lat
+            cityViewController.viewtitle = self.filterData[indexPath.row].name
             self.navigationController?.pushViewController(cityViewController, animated: true)
         }
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if !self.cityData.isEmpty, indexPath.row + 1 == self.cityData.count {
+        if !self.filterData.isEmpty, indexPath.row + 1 == self.filterData.count {
             self.offSet += 100
             loadCityData(offSet: offSet)
             self.tbl_cityDetails.reloadData()
