@@ -50,7 +50,7 @@ extension CityMapViewController : CLLocationManagerDelegate,MKMapViewDelegate{
     
     func render(_ location:CLLocation){
         let coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        let span = MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
+        let span = MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
         let region = MKCoordinateRegion(center: coordinates, span: span)
         mkMapViewObj.setRegion(region, animated: true)
     }

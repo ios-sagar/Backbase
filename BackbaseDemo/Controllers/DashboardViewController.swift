@@ -10,8 +10,11 @@ import UIKit
 class DashboardViewController: UIViewController {
     
     @IBOutlet weak var tbl_cityDetails: UITableView!
+    @IBOutlet weak var city_searchBar: UISearchBar!
+    
     private let dashboardViewModel = DashboardViewModel()
     var cityData = [Cities]()
+    var filterData = [Cities]()
     var offSet = 100
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +31,10 @@ class DashboardViewController: UIViewController {
     
     func loadCityData(offSet : Int){
         dashboardViewModel.loadCities(offSet: offSet)
-        self.tbl_cityDetails.reloadData()
+        //self.filterData = self.cityData
+        DispatchQueue.main.async {
+            self.tbl_cityDetails.reloadData()
+        }
     }
     
     func showSpinner(){
@@ -43,14 +49,18 @@ class DashboardViewController: UIViewController {
 
 extension DashboardViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cityData.count
+        if(city_searchBar.text == ""){
+            return cityData.count
+        }else{
+            return filterData.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cityCellIdentifier) as! CityDetailsTableViewCell
         cell.separatorInset = UIEdgeInsets.zero
         cell.selectionStyle = .none
-        cell.configureCell(city: cityData, indexPath: indexPath.row)
+        cell.configureCell(city: self.cityData, indexPath: indexPath.row)
         return cell
     }
     
@@ -64,9 +74,10 @@ extension DashboardViewController : UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if !cityData.isEmpty, indexPath.row + 1 == cityData.count {
+        if !self.cityData.isEmpty, indexPath.row + 1 == self.cityData.count {
             self.offSet += 100
             loadCityData(offSet: offSet)
+            self.tbl_cityDetails.reloadData()
         }
     }
     
@@ -74,6 +85,18 @@ extension DashboardViewController : UITableViewDelegate, UITableViewDataSource{
 
 extension DashboardViewController : DashboardViewDelegate{
     func getCityValues(cityValues: [Cities]) {
-        cityData = cityValues
+        self.cityData = cityValues
+    }
+}
+
+extension DashboardViewController : UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty  else { filterData = cityData; return }
+
+            filterData = cityData.filter({ user -> Bool in
+                return user.name.lowercased().contains(searchText.lowercased())
+            })
+        self.tbl_cityDetails.reloadData()
+
     }
 }

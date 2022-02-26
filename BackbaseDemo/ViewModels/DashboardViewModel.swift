@@ -31,9 +31,9 @@ class DashboardViewModel{
     
     var cities = [Cities]()
     var dashboardDelegate : DashboardViewDelegate?
+    var networkManager = NetworkManager()
     
     func loadCities(offSet : Int) {
-        let networkManager = NetworkManager()
         networkManager.getDataFrom(offset: offSet, completion: { city, Error in
             print(city as Any)
             if let response = city {

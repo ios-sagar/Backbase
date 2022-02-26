@@ -78,6 +78,7 @@
                         <nil key="title"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="city_searchBar" destination="ZvQ-DB-9se" id="fye-Rk-KCb"/>
                         <outlet property="tbl_cityDetails" destination="0uc-a5-9gk" id="OEg-4d-aF3"/>
                     </connections>
                 </viewController>
