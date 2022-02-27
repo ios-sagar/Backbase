@@ -37,7 +37,6 @@ class BackbaseDemoTests: XCTestCase {
             let mockDashboardModel = MockDashboardViewModel()
             var bindResult : Bool?
             networkManagerObj.getDataFrom(offset: 10, completion: { city, Error in
-                print(city as Any)
                 if let response = city {
                     bindResult = mockDashboardModel.testBindData(parameter: response)
                 }
@@ -61,6 +60,17 @@ class BackbaseDemoTests: XCTestCase {
                 XCTAssert(false)
             }
             if(isEnabled){
+                XCTAssert(true)
+            }else{
+                XCTAssert(false)
+            }
+        }
+    }
+    
+    class DashboardviewControllerTest: XCTestCase{
+        func testSearchFunction(){
+            let mockSearchObj = MockSearchManager()
+            if(mockSearchObj.getSearchedCity(searchedCity: "Hurzuf")){
                 XCTAssert(true)
             }else{
                 XCTAssert(false)

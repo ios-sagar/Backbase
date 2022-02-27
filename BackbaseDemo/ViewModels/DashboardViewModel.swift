@@ -35,7 +35,6 @@ class DashboardViewModel{
     
     func loadCities(offSet : Int) {
         networkManager.getDataFrom(offset: offSet, completion: { city, Error in
-            print(city as Any)
             if let response = city {
                 self.bindData(parameter: response)
             }
@@ -50,5 +49,9 @@ class DashboardViewModel{
         }else{
             print("error")
         }
+    }
+    
+    func showFilteredData(searchTextValue : String) -> [Cities]{
+        return cities.filter{$0.name.range(of: searchTextValue, options: .caseInsensitive) != nil }
     }
 }

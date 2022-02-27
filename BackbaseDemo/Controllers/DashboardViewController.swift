@@ -71,7 +71,7 @@ extension DashboardViewController : UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if !self.filterData.isEmpty, indexPath.row + 1 == self.filterData.count {
+        if !self.filterData.isEmpty, indexPath.row + 1 == self.cityData.count {
             self.offSet += 100
             loadCityData(offSet: offSet)
             self.tbl_cityDetails.reloadData()
@@ -91,8 +91,10 @@ extension DashboardViewController : UISearchBarDelegate{
         if searchText.isEmpty {
             filterData = cityData
         } else {
-            filterData = cityData.filter{$0.name.range(of: searchText, options: .caseInsensitive) != nil }
+            filterData = dashboardViewModel.showFilteredData(searchTextValue: searchText)
         }
-        self.tbl_cityDetails.reloadData()
+        DispatchQueue.main.async {
+            self.tbl_cityDetails.reloadData()
+        }
     }
 }
